@@ -9,7 +9,7 @@ namespace DataStructure
     class Stack : ICommonFunctionality
     {
         public int[] StackArray = new int[100]; //Array to store address of each node of stack
-        public int StackTop; 
+        public int StackTop=-1; 
         public void AddingValues(int Value)
         {
             //StackNode NodeObject = new StackNode();
@@ -17,8 +17,8 @@ namespace DataStructure
                 Console.WriteLine("Stack Full");
             else
             {
-                StackArray[StackTop + 1] = Value;
-                StackTop = StackTop + 1;
+                StackArray[StackTop+1] = Value;
+                StackTop++;
             }
         }
         public int RemovingValues()
@@ -40,13 +40,25 @@ namespace DataStructure
         public void DisplayingValues()
         {
             int index;
-            for(index=0;index<StackTop;index++)
+            for(index=0;index<=StackTop;index++)
                 Console.Write(StackArray[index]+" ");
             Console.WriteLine();
         }
         public void SortingValues()
         {
-            //Sorting Code
+            int loop1, loop2,SwitchNum;
+            for(loop1=0;loop1<StackTop;loop1++)
+            {
+                for(loop2=loop1;loop2<=StackTop;loop2++)
+                {
+                   if(StackArray[loop1]>StackArray[loop2])
+                    {
+                        SwitchNum = StackArray[loop1];
+                        StackArray[loop1] = StackArray[loop2];
+                        StackArray[loop2] = SwitchNum;
+                    }
+                }
+            }
         }
         public int GettingTopValue()
         {

@@ -10,6 +10,5 @@ namespace DataStructure
     {
         public int DataValue;
         public LinkListNode next;
-        public LinkListNode prev;
     }
 }

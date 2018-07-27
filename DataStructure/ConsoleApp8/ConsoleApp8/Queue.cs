@@ -8,12 +8,14 @@ namespace DataStructure
 {
     class Queue:ICommonFunctionality
     {
-        public int front, rear;
+        public int front=-1, rear=-1;
         public int[] QueueArray = new int[100];
 
         public void AddingValues(int Value)
         {
             //StackNode NodeObject = new StackNode();
+            if (rear == -1)
+                front++;
             QueueArray[rear + 1] = Value;
             rear = rear + 1;
         }
@@ -45,7 +47,19 @@ namespace DataStructure
         }
         public void SortingValues()
         {
-            //Sorting Code
+            int loop1, loop2, SwitchNum;
+            for (loop1 = front; loop1 < rear ; loop1++)
+            {
+                for (loop2 = loop1; loop2 <=rear ; loop2++)
+                {
+                    if (QueueArray[loop1] < QueueArray[loop2])
+                    {
+                        SwitchNum = QueueArray[loop1];
+                        QueueArray[loop1] = QueueArray[loop2];
+                        QueueArray[loop2] = SwitchNum;
+                    }
+                }
+            }
         }
         public int peek()
         {
@@ -65,87 +79,7 @@ namespace DataStructure
             else
                 return false;
         }
-        public void QueueMenu()
-        {
-            int UserChoice;
-            Queue QueueObject = new Queue();
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("Queue Menu");
-                Console.WriteLine("1-EnQueue");
-                Console.WriteLine("2-DeQueue");
-                Console.WriteLine("3-Display Elements of Queue");
-                Console.WriteLine("4-Sort Elements of Queue");
-                Console.WriteLine("5-Print Element at Front in Queue");
-                Console.WriteLine("6-Check if Queue is Full");
-                Console.WriteLine("7-Check if Queue is Empty");
-                Console.WriteLine("8-Go Back To Main Menu");
-                Console.WriteLine("Enter Your Choice");
-                UserChoice = int.Parse(Console.ReadLine());
-
-                switch (UserChoice)
-                {
-                    case 1:
-                        Console.WriteLine("Enter Element to be Inserted");
-                        int AddValue = int.Parse(Console.ReadLine());
-                        QueueObject.AddingValues(AddValue);
-                        Console.WriteLine("Value Added in Stack");
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 2:
-                        int ValueRemoved = QueueObject.RemovingValues();
-                        Console.WriteLine("Value Removed is " + ValueRemoved);
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 3:
-                        QueueObject.DisplayingValues();
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 4:
-                        Console.WriteLine("Stack Before Sorting");
-                        QueueObject.DisplayingValues();
-                        QueueObject.SortingValues();
-                        Console.WriteLine("Stack After Sorting");
-                        QueueObject.DisplayingValues();
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 5:
-                        Console.WriteLine("Front Value=" + QueueObject.peek());
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 6:
-                        if (QueueObject.isFull())
-                            Console.WriteLine("Queue is Full");
-                        else
-                            Console.WriteLine("Queue is not Full");
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 7:
-                        if (QueueObject.isEmpty())
-                            Console.WriteLine("Queue is Empty");
-                        else
-                            Console.WriteLine("Queue is not Empty");
-                        Console.ReadLine();
-                        Console.Clear();
-                        break;
-                    case 8:
-                        Console.WriteLine("Exiting Queue Menu");
-                        Console.Clear();
-                        return;
-                    default:
-                        Console.WriteLine("Invalid Input. Please Try Again");
-                        Console.Clear();
-                        break;
-                }
-            } while (UserChoice != 8);
-        }
+        
     }
 }
 
