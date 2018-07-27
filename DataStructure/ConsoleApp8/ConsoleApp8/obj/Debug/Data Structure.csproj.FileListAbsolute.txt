@@ -1,0 +1,7 @@
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\bin\Debug\ConsoleApp8.exe.config
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\bin\Debug\ConsoleApp8.exe
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\bin\Debug\ConsoleApp8.pdb
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\obj\Debug\Data Structure.csprojResolveAssemblyReference.cache
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\obj\Debug\Data Structure.csproj.CoreCompileInputs.cache
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\obj\Debug\ConsoleApp8.exe
+F:\Tavisca Work\Shreaa\DataStructure\ConsoleApp8\ConsoleApp8\obj\Debug\ConsoleApp8.pdb
